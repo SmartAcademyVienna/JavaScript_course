@@ -1,0 +1,13 @@
+body { background-color: antiquewhite ;
+}
+.message { font-size: 33px ; text-align: left;
+margin-top: 30px ;
+margin-left: 70 ;
+float: left;}
+.message1 { font-size: 33px ;text-align: left;
+    margin-top: 50px ;
+    margin-left: 70 ;
+    float: left;}
+
+img {margin-top: 200px;
+float:center; }

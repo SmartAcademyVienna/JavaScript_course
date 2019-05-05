@@ -1,0 +1,70 @@
+body{ background-repeat: no-repeat  ;
+background-size: 200% ;
+text-align: right ; }
+
+
+
+@font-face{ font-family:Myhedings;
+    src: url(assets\fonts\deceptibots.ttf);}
+@font-face{  font-family : MyText;
+    src: url(assets\fonts\deceptibotsgradital.ttf);}
+
+
+    a { text-decoration: none ;}
+ul li { list-style: none;}
+
+    #menu { float: left;}
+
+#menu ul li { float: left; 
+margin-right: 10px; padding: 8px; background: rgb(255, 246, 246); 
+border-style:solid;  border-radius: 6px;  }
+#menu  ul li a { font-family: MyText; font-size: 20px ;
+    color: #000000; }
+    #menu ul li :hover{ color: rgb(104, 32, 32); font-size: 33px;}
+
+
+    #logo  h1 {margin:0px ;
+        padding: 0px; color: #1b1815;
+        font-size: 100px;
+        font-family:Myhedings;  }
+        #logo  p {margin:0px ;
+            padding: 0px; color: #1b1815;
+            font-size: 50px;
+            font-family:Myhedings;  }
+
+            #container {margin-top: 120px;}
+            #container h2 {font-size: 34px; font-family:Myhedings;color: #312720;margin-bottom: 56px ;
+                padding: 0px; ; margin-right: 1300px;
+            
+            }
+           
+            #container h3 {font-size: 30px; font-family:Myhedings;color: #312720;margin-bottom: 56px ;
+                padding: 0px; ;
+            
+            }
+            .box {width: 360px; margin-left: 60px ; float: left; border: 1px hidden #f08630; 
+                padding: 5px;  border-radius: 6px;}
+                .box:hover{ border: 3px dotted #f3730a;  }
+                .box  image{ margin-left: 10px ; float: left; }
+                .box h3{font-size: 34px; font-family:Myhedings;color: #f08630;margin:0px ;
+                    padding: 0px; }
+                    .box p{font-size: 30px; font-family:MyText;color:  #201a18;;margin:0px ;
+                        padding: 0px; }
+
+                        #bottom{ clear: both;}
+#bottom ul li{margin-right: 10px ; float: left;
+margin-top: 120px;}
+
+#about  ul li  {float: left ; color: #312720; font-size: 22px; font-family:Myhedings;  list-style: disc ;margin-right: 10px;padding: 0px;; ;}
+
+table tr td {width: 300px; margin-top: 30px;
+float: center; }
+
+.box1 {width: 360px; margin-left: 100px ; float: left;  }
+    .box1  image{ margin-left: 20px ; float: left; }
+
+    .box2 {width: 360px; margin-left: 100px ; float: left; font-size: 30px; font-family:Myhedings;color: #312720; }
+    .box2  image{ margin-left: 20px ; float: left; }
+    #jobs{ float: left;}
+
+    #fo { margin-right: 229px ;  }
