@@ -35,4 +35,4 @@ Any variable declaration **`outside`** a function will be considered as local va
 
 ## How memory & variable works?
 
-`Global variables` use more memory. The browser has to remember them for as long as the web page using them is loaded. `Local variables` are only remembered during the period of time that a function is being executed. It is good to note that any local variable inside a function will be lost when the function ends.
+`Global variables` use more memory. The browser has to remember them for as long as the web page using them. `Local variables` are only remembered during the period of time that a function is being executed. It is good to note that any local variable inside a function will be lost when the function ends.

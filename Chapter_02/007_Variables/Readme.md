@@ -1,6 +1,6 @@
 # Variables
 
-Variable is like a class of water that you can put/take something into/from it and use it when you need it. So basically data can be stored in variables.
+Variable is like a glass of water that you can put/take something into/from it and use it when you need it. So basically data can be stored in variables.
 
 ## How to declare a variable?
 
@@ -25,17 +25,17 @@ Can you specify the valid variable names:
 | Variable name | Is Valid |
 | -------------------- | --------- |
 | firstName | Yes |
-| Var# | --- |
-| first_name | --- |
-| num1 | --- |
-|first name | --- |
-| first-name | --- |
-| 1number | --- |
-| \$result | --- |
+| Var# | No |
+| first_name | Yes |
+| num1 | Yes |
+|first name | No |
+| first-name | No |
+| 1number | No |
+| \$result | Yes |
 
 ## Variable data types
 
-JavaScript distinguishes between `numbers` `strings`, and true or false values known as `Booleans`, Functions, Arrays, Objects.
+JavaScript distinguishes between `numbers` `strings`, and `true` or `false` values known as `Booleans`, Functions, Arrays, Objects.
 
 For now we will see only 3 major type which are `strings`,`numbers`,`boolean`.
 

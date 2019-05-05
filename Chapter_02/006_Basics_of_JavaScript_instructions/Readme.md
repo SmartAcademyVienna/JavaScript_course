@@ -28,8 +28,8 @@ Multi-line comment
 You may see comments as dummy gray or green color depends on the editor.
 */
 
-let today = new Date(); // Create a ne1~ dat e object
-let text = document.querySelector(".text"); // Find the current hour
+let today = new Date(); // Create an object from class date
+let text = document.querySelector(".text"); // Find HTML tag that has class text and save it in text variable.
 let hour = today.getHours();
 let greeting;
 

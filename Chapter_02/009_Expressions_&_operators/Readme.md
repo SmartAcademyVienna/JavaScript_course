@@ -2,7 +2,7 @@
 
 ## Expressions
 
-An expression evaluates into (results in) a single value. Broadly speaking there are two types of expressions.
+An expression evaluates into (results) in a single value. Broadly speaking there are two types of expressions.
 
 - EXPRESSIONS THAT JUST ASSIGN A VALUE TO A VARIABLE.
   ```js

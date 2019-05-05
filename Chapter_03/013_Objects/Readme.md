@@ -79,12 +79,105 @@ var fullName = myName["firstName"] + " " + myName["lastName"]; // Ahmed HAMEED
 let fullName = `${myName["firstName"]} ${myName["lastName"]}`; // Ahmed HAMEED
 ```
 
-```js
-// Ahmed write them c03/js/object-literal Program
+example found in **Examples/c3/js/object-literal.js**
+
+**HTML**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      JavaScript &amp; jQuery - Chapter 3: Functions, Methods &amp; Objects -
+      Object Literal
+    </title>
+    <link rel="stylesheet" href="css/c03.css" />
+  </head>
+  <body>
+    <h1>TravelWorthy</h1>
+    <div id="info">
+      <h2>hotel availability</h2>
+      <div id="hotelName"></div>
+      <div id="availability">
+        <p id="rooms"></p>
+        <p>rooms left</p>
+      </div>
+    </div>
+    <script src="js/object-literal.js"></script>
+  </body>
+</html>
 ```
 
+**JavaScript**
+
 ```js
-// Ahmed write them c03/js/object-literal2 Program
+// Set up the object
+var hotel = {
+  name: "Quay",
+  rooms: 40,
+  booked: 25,
+  checkAvailability: function() {
+    return this.rooms - this.booked; // Need "this" because inside function
+  }
+};
+
+// Update the HTML
+var elName = document.getElementById("hotelName"); // Get element
+elName.textContent = hotel.name; // Update HTML with property of the object
+
+var elRooms = document.getElementById("rooms"); // Get element
+elRooms.textContent = hotel.checkAvailability(); // Update HTML with property of the object
+```
+
+**Another example**
+example found in **Examples/c3/js/object-literal2.js**
+
+**HTML**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      JavaScript &amp; jQuery - Chapter 3: Functions, Methods &amp; Objects -
+      Object Literal 2
+    </title>
+    <link rel="stylesheet" href="css/c03.css" />
+  </head>
+  <body>
+    <h1>TravelWorthy</h1>
+    <div id="info">
+      <h2>hotel availability</h2>
+      <div id="hotelName"></div>
+      <div id="availability">
+        <p id="rooms"></p>
+        <p>rooms left</p>
+      </div>
+    </div>
+    <script src="js/object-literal2.js"></script>
+  </body>
+</html>
+```
+
+**JavaScript**
+
+```js
+// Set up the object
+var hotel = {
+  name: "Park",
+  rooms: 120,
+  booked: 77,
+  checkAvailability: function() {
+    return this.rooms - this.booked; // Need "this" because inside function
+  }
+};
+
+// Update the HTML
+var elName = document.getElementById("hotelName"); // Get element
+elName.textContent = hotel.name; // Update HTML with property of the object
+
+var elRooms = document.getElementById("rooms"); // Get element
+elRooms.textContent = hotel.checkAvailability(); // Update HTML with property of the object
 ```
 
 ## Create an object using (Constructor notation)
