@@ -1,5 +1,5 @@
 var radius = 13;
-var surfaceArea = 4 * 3.14 * radius * radius; 
+var surfaceArea = 4 * Math.PI * radius * radius; 
 
 
 if (surfaceArea >= 313.5 && surfaceArea <= 314) {    
