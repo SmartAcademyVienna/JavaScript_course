@@ -1,0 +1,15 @@
+body { background-color: antiquewhite ;
+    background: url("../images/01_ala3ab_sports.jpg");
+    background-repeat: no-repeat ;
+    background-size:100% ; height: 100%; }
+
+
+    #content { background-color: aliceblue ;
+        
+        font-size: 25px ;
+        text-align: center;width: 400px;height: 650px;
+        margin-left: 700px ; border-style: solid;border-color:black;
+        border-radius: 20px;
+    }
+    h5{color: red;}
+   
