@@ -4,7 +4,7 @@ Try to create new variables and change the values accordingly. Create new variab
 
 ## HOMEWORK_2
 
-Calculate the surface area of basketball. Radius is 13 cm. If the value is between 314 cm2 and 313 cm2 then show the message "This is basketball", otherwise show a message saying "This is not basketball"
+Calculate the surface area of basketball. Radius is 5 cm. If the value is between 314 cm2 and 313 cm2 then show the message "This is basketball", otherwise show a message saying "This is not basketball"
 
 To compare the value use If statement like the following
 

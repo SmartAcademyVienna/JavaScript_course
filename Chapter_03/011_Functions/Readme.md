@@ -118,7 +118,7 @@ This is known as `calling a function`.
 
 ![Function flow](function_flow.png)
 
-## Declaring a function that need information
+## Declaring a function that needs information
 
 Sometimes a function needs specific information to perform its task. In such cases, when you declare the function you give it `parameters` inside the function, the parameters act like variables.
 
@@ -163,10 +163,10 @@ For example, this function calculate the area and volume of a box.
 
 ```js
 function getSize(width, height, depth) {
-  var size = width * height;
+  var area = width * height;
   var volume = width * height * depth;
-  var size = [size, volume];
-  return size;
+  var result = [area, volume];
+  return result;
 }
 var areaOne = getSize(3, 2, 3)[0];
 var volumeOne = getSize(3, 2, 3)[0];
