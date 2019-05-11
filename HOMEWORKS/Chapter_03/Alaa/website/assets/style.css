@@ -38,11 +38,22 @@ h1 {
 li {
     font-size: large;
     border: 3px burlywood;
+    text-align: center;
 }
 
 .column {
     float: left;
-    width: 50%;
+    width: 70%;
+    align-content: center;
+}
+
+
+.imgbox {
+    float: right;
+    width: 20%;
+    background-color: burlywood;
+    border-left-style: dashed;
+    border-left-color: black 
 }
 
 .row:after {
@@ -52,7 +63,19 @@ li {
 }
 
 img {
-    width: 35%;
-    float: left;
-        
+    width: 100%;
+}
+
+#date {
+    font-size: large;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+.preisbox {
+    float: center;
+    background-color: burlywood;
+    width: 5cm;
+
 }
