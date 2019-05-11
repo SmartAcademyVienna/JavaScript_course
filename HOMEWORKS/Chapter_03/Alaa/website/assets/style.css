@@ -1,0 +1,58 @@
+header {
+    background-color: burlywood;
+    text-align: center;
+    padding: 20px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+nav {
+    padding: 10px;
+    text-align: center;
+    font-size: medium;
+    background-color: lightgoldenrodyellow;
+    font-weight: bold;
+}
+
+a:link {
+    color: brown;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rosybrown;
+    text-decoration: none;
+}
+
+a:hover {
+    color: brown;
+    background-color: burlywood;
+    text-decoration: underline;
+  }
+
+h1 {
+    font-weight: normal;
+    text-align: center;
+}
+
+li {
+    font-size: large;
+    border: 3px burlywood;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img {
+    width: 35%;
+    float: left;
+        
+}
