@@ -1,0 +1,62 @@
+body {
+  background-color: rgb(231, 221, 160);
+  text-align: center;
+}
+
+@font-face {
+  font-family: Myhedings;
+  src: url("../fonts/deceptibots.ttf");
+}
+
+@font-face {
+  font-family: MyText;
+  src: url("../fonts/TOBA\ BOLD.ttf");
+}
+
+#container {
+  margin-top: 40px;
+}
+#container h2 {
+  font-size: 50px;
+  font-family: Myhedings;
+  padding: 0px;
+}
+#container p {
+  font-size: larger;
+  font-family: MyText;
+}
+
+.box {
+  width: 370px;
+  height: 1300px;
+  float: center;
+  margin-left: 550px;
+  background: lemonchiffon;
+}
+
+.box h3 {
+  font-size: 40px;
+  font-family: Myhedings;
+  color: #f08630;
+  margin: 0px;
+  padding: 0px;
+}
+
+h4 {
+  font-family: Myhedings;
+  font-size: 28px;
+}
+div {
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  font-family: MyText;
+}
+h5 {
+  font-family: Myhedings;
+  font-size: 28px;
+  color: #ff0000;
+}
+#Price {
+  color: #ff0000;
+}
