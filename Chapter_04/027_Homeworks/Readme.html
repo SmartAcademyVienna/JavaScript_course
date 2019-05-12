@@ -6,9 +6,9 @@
 
     <style>
       /*---------------------------------------------------------------------------------------------
-	 *  Copyright (c) Microsoft Corporation. All rights reserved.
-	 *  Licensed under the MIT License. See License.txt in the project root for license information.
-	 *--------------------------------------------------------------------------------------------*/
+		 *  Copyright (c) Microsoft Corporation. All rights reserved.
+		 *  Licensed under the MIT License. See License.txt in the project root for license information.
+		 *--------------------------------------------------------------------------------------------*/
 
       body {
         font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -379,8 +379,8 @@
 
     <style>
       /*
-	 * Markdown PDF CSS
-	 */
+		 * Markdown PDF CSS
+		 */
 
       body {
         font-family: "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -417,7 +417,7 @@
       }
 
       /* Page Break : use <div class="page"/> to insert page break
-	-------------------------------------------------------- */
+		-------------------------------------------------------- */
       .page {
         page-break-after: always;
       }
@@ -450,10 +450,82 @@
     </style>
   </head>
   <body>
-    <h1 id="examples">Examples</h1>
+    <h1 id="chapter-4-example">Chapter 4 example</h1>
+    <p>
+      example found in
+      <strong
+        ><a href="../Examples/c04/example.html"
+          >Examples/c04/example.html</a
+        ></strong
+      >
+    </p>
+    <p><strong>JavaScript</strong></p>
     <pre
       class="hljs"
-    ><code><div><span class="hljs-comment">// Ahmed write them c04/js/example.js Program</span>
+    ><code><div><span class="hljs-keyword">var</span> table = <span class="hljs-number">3</span>; <span class="hljs-comment">// Unit of table</span>
+<span class="hljs-keyword">var</span> operator = <span class="hljs-string">"addition"</span>; <span class="hljs-comment">// Type of calculation by default.</span>
+<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; <span class="hljs-comment">// Set counter to 1 or you can make it empty since it is assigned inside the drawOnHTML function</span>
+<span class="hljs-keyword">var</span> msg = <span class="hljs-string">""</span>; <span class="hljs-comment">// Message</span>
+<span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"blackboard"</span>); <span class="hljs-comment">// Make a cache for the HTML element that has id of "blackboard"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">iteration, operation, table</span>) </span>{
+  <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">switch</span> (operation) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"/"</span>:
+      result = (iteration / table).toFixed(<span class="hljs-number">2</span>);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"-"</span>:
+      result = iteration - table;
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"*"</span>:
+      result = iteration * table;
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+      result = iteration + table;
+      <span class="hljs-keyword">break</span>;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">op</span>) </span>{
+  <span class="hljs-keyword">switch</span> (op) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"subtraction"</span>:
+      operator = <span class="hljs-string">"-"</span>;
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"multiplication"</span>:
+      operator = <span class="hljs-string">"*"</span>;
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">"division"</span>:
+      operator = <span class="hljs-string">"/"</span>;
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+      operator = <span class="hljs-string">"+"</span>;
+  }
+  drawOnHTML();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawOnHTML</span>(<span class="hljs-params"></span>) </span>{
+  i = <span class="hljs-number">1</span>;
+  msg = <span class="hljs-string">""</span>;
+
+  <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">11</span>) {
+    msg +=
+      i +
+      <span class="hljs-string">" "</span> +
+      operator +
+      <span class="hljs-string">" "</span> +
+      table +
+      <span class="hljs-string">" = "</span> +
+      calculate(i, operator, table) +
+      <span class="hljs-string">"&lt;br /&gt;"</span>;
+    i++;
+  }
+
+  el.innerHTML = msg; <span class="hljs-comment">// By using the object of HTML element that we've cached, we can inject HTML into it.</span>
+}
+
+<span class="hljs-comment">// This is the first call since the function is not executed at first so we have to call it at the first time of page loading.</span>
+render();
 </div></code></pre>
     <h2 id="homework01">HOMEWORK_01</h2>
     <p>
