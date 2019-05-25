@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;width:500px; }/*here size of the box*/
+*{
+  margin-top: 20px;
+}
+.mySlides1 {display: none}
+img {vertical-align: middle;
+    height: 250px;
+    width: 100px;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+</style>
+</head>
+<body background="image.jpg">
+  <div style="margin-left:440px; background:black; color:white;" >
+    <h1 align="center"> cute cat</h1>
+    </div>
+      
+<div class="slideshow-container" style="margin:100px 0 10px 435px">
+ 
+
+  <div class="mySlides1">
+    <img src="https://66.media.tumblr.com/tumblr_m4f8t9JGy11qejbiro1_250.jpg" style="width:100%" class ="pics">
+  <div style="text-align: center; background:black;height:25px; width:100%;">  
+   <span style="color: white;" color="white" >tumblr_m4f8t9JGy11qejbiro1_250</span>  
+   </div>
+  </div>
+  
+  <div class="mySlides1">
+    <img src="https://66.media.tumblr.com/tumblr_m0v0feUY3X1qzwfgto1_250.png" style="width:100%" class ="pics">
+     <div style="text-align: center; background:black;height:25px; width:100%;">
+      <span style="color: white;" color="white" >tumblr_m0v0feUY3X1qzwfgto1_250</span>  
+   </div>
+   </div>
+  
+  <div class="mySlides1">
+    <img src="https://cdn2.thecatapi.com/images/ae4.gif" style="width:100%" 
+    class ="pics" >
+    <div style="text-align: center; background:black;height:25px; width:100%;">
+      <span style="color: white;" color="white" >ae4</span>  
+  </div>
+  </div>
+  
+  <div class="mySlides1">
+    <img src="https://66.media.tumblr.com/tumblr_m1vu8mrE0z1qze0hyo1_250.jpg" style="width:100%" class ="pics">
+    <div style="text-align: center;background:black;height:25px; width:100%;">
+      <span style="color: white;" color="white" >tumblr_m1vu8mrE0z1qze0hyo1_250</span>  
+  </div>
+  </div>
+  
+ 
+  
+  <div class="mySlides1">
+    <img src="https://66.media.tumblr.com/tumblr_kop8wzgxHa1qzv5pwo1_250.jpg"
+    class ="pics" style="width:100%">
+      <div style="text-align: center; background:black;height:25px; width:100%;">
+   <span style="color: white;" color="white" >tumblr_kop8wzgxHa1qzv5pwo1_250</span>
+  </div>
+  </div>
+  
+  <div class="mySlides1">
+    <img src="https://cdn2.thecatapi.com/images/3v7.gif"  
+    class ="pics"style="width:100%">
+       <div style="text-align:center; background:black; height:25px; width:100%;">
+      <span style="color: white;" color="white" >3v7</span>  
+  </div>   
+  </div>
+  
+  <div class="mySlides1">
+    <img src="https://66.media.tumblr.com/tumblr_m3kg02GkLw1qjc1a7o1_250.jpg"         class ="pics" style="width:100%">
+       <div style="text-align:center; background:black; height:25px; width:100%;">
+      <span style="color: white;" color="white" >tumblr_m3kg02GkLw1qjc1a7o1_250</span>  
+  </div> 
+  </div>
+  
+  <div class="mySlides1">
+    <img src="https://66.media.tumblr.com/tumblr_m3o5vhPKBa1rtuomto1_250.jpg"
+    class ="pics" style="width:100%">
+      <div style="text-align: center; background:black;height:25px; width:100%;">
+      <span style="color: white;" color="white" >tumblr_m3o5vhPKBa1rtuomto1_250</span>  
+  </div>
+  </div> 
+  
+ 
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;O</a>
+  <a class="next" onclick="plusSlides(1, 0)">O&#10095;</a>
+</div>
+
+
+<script>
+var slideIndex = [1,1];
+var slideId = ["mySlides1"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+
+</body>
+</html>
