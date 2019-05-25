@@ -6,9 +6,9 @@
 
     <style>
       /*---------------------------------------------------------------------------------------------
-		 *  Copyright (c) Microsoft Corporation. All rights reserved.
-		 *  Licensed under the MIT License. See License.txt in the project root for license information.
-		 *--------------------------------------------------------------------------------------------*/
+*  Copyright (c) Microsoft Corporation. All rights reserved.
+*  Licensed under the MIT License. See License.txt in the project root for license information.
+*--------------------------------------------------------------------------------------------*/
 
       body {
         font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -379,8 +379,8 @@
 
     <style>
       /*
-		 * Markdown PDF CSS
-		 */
+* Markdown PDF CSS
+*/
 
       body {
         font-family: "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -417,7 +417,7 @@
       }
 
       /* Page Break : use <div class="page"/> to insert page break
-		-------------------------------------------------------- */
+-------------------------------------------------------- */
       .page {
         page-break-after: always;
       }
@@ -450,173 +450,230 @@
     </style>
   </head>
   <body>
-    <h1 id="chapter-4-example">Chapter 4 example</h1>
+    <h1 id="adding-or-removing-html-content">
+      Adding Or Removing HTML content
+    </h1>
+    <h2 id="adding-html-contents">Adding HTML contents:</h2>
     <p>
-      example found in
+      There are two very different approaches to adding and removing content
+      from a DOM tree:
+    </p>
+    <ol>
+      <li><code>innerHTML</code> property.</li>
+      <li>DOM manipulation.</li>
+    </ol>
+    <h2 id="1-the-innerhtml-property">1. The innerHTML property:</h2>
+    <p>See the following figure:</p>
+    <p><img src="./adding_with_innerhtml.png" alt="adding_with_innerhtml" /></p>
+    <h2 id="2-dom-manipulation">2. DOM manipulation:</h2>
+    <p>See the following figure:</p>
+    <p><img src="./dom_manipulation.png" alt="dom_manipulation" /></p>
+    <p>
       <strong
-        ><a href="../Examples/c04/example.html"
-          >Examples/c04/example.html</a
+        ><em
+          >DOM manipulation easily targets individual nodes in the DOM tree,
+          whereas <code>innerHTML</code> is better suited to updating entire
+          fragments.</em
         ></strong
       >
     </p>
-    <p><strong>JavaScript</strong></p>
+    <p>Let us get deep wit them.</p>
+    <h2 id="innerhtml-accessing-and-updating-text-and-markup">
+      (innerHTML) Accessing and Updating text and markup
+    </h2>
+    <p>
+      Using the <code>innerHTML</code> property, you can access and modify the
+      contents of an element, including any child elements.
+    </p>
+    <p><img src="./innerHTML.png" alt="innerHTML" /></p>
+    <h3 id="get-content">GET content</h3>
+    <p>
+      To collect the content of the list item and add it to a variable called
+      <code>elContent</code>.
+    </p>
     <pre
       class="hljs"
-    ><code><div><span class="hljs-keyword">var</span> table = <span class="hljs-number">3</span>; <span class="hljs-comment">// Unit of table</span>
-<span class="hljs-keyword">var</span> operator = <span class="hljs-string">"addition"</span>; <span class="hljs-comment">// Type of calculation by default.</span>
-<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; <span class="hljs-comment">// Set counter to 1 or you can make it empty since it is assigned inside the drawOnHTML function</span>
-<span class="hljs-keyword">var</span> msg = <span class="hljs-string">""</span>; <span class="hljs-comment">// Message</span>
-<span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"blackboard"</span>); <span class="hljs-comment">// Make a cache for the HTML element that has id of "blackboard"</span>
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">iteration, operation, table</span>) </span>{
-  <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">switch</span> (operation) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"/"</span>:
-      result = (iteration / table).toFixed(<span class="hljs-number">2</span>);
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"-"</span>:
-      result = iteration - table;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"*"</span>:
-      result = iteration * table;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-      result = iteration + table;
-      <span class="hljs-keyword">break</span>;
-  }
-  <span class="hljs-keyword">return</span> result;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">op</span>) </span>{
-  <span class="hljs-keyword">switch</span> (op) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"subtraction"</span>:
-      operator = <span class="hljs-string">"-"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"multiplication"</span>:
-      operator = <span class="hljs-string">"*"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"division"</span>:
-      operator = <span class="hljs-string">"/"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-      operator = <span class="hljs-string">"+"</span>;
-  }
-  drawOnHTML();
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawOnHTML</span>(<span class="hljs-params"></span>) </span>{
-  i = <span class="hljs-number">1</span>;
-  msg = <span class="hljs-string">""</span>;
-
-  <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">11</span>) {
-    msg +=
-      i +
-      <span class="hljs-string">" "</span> +
-      operator +
-      <span class="hljs-string">" "</span> +
-      table +
-      <span class="hljs-string">" = "</span> +
-      calculate(i, operator, table) +
-      <span class="hljs-string">"&lt;br /&gt;"</span>;
-    i++;
-  }
-
-  el.innerHTML = msg; <span class="hljs-comment">// By using the object of HTML element that we've cached, we can inject HTML into it.</span>
-}
-
-<span class="hljs-comment">// This is the first call since the function is not executed at first so we have to call it at the first time of page loading.</span>
-render();
+    ><code><div><span class="hljs-keyword">let</span> elContent = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"one"</span>).innerHTML;
 </div></code></pre>
-    <h2 id="homework01">HOMEWORK_01</h2>
     <p>
-      Write a simple webpage that show the images of cats [In row] with a nice
-      way using your technique of HTML and CSS. The images URL can be found
-      bellow in the <code>Array of objects</code> as a response from the server.
-      After showing the images, Add the name of the image bellow each image.
-      Example:
+      The <code>elContent</code> variable would now hold the
+      <code>string</code>: <code>\&lt;em&gt;fresh\&lt;/em&gt; figs</code>
     </p>
+    <h3 id="set-content">SET content</h3>
     <p>
-      Name: <code>tumblr_m3o5vhPKBa1rtuomto1_250.jpg</code> Another example:
-      Name: <code>3v7.gif</code>
+      Adding content of the <code>elContent</code> variable (including any
+      markup) to the first list item:
     </p>
-    <p>
-      Use what you've learned from this chapter to implement the fewest code of
-      implementation.
-    </p>
-    <pre class="hljs"><code><div>[
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"2f9"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://26.media.tumblr.com/tumblr_m3o5vhPKBa1rtuomto1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">500</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">333</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"3h0"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m3kg02GkLw1qjc1a7o1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">900</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">600</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"3v7"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://cdn2.thecatapi.com/images/3v7.gif"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">245</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">245</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"58l"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_kop8wzgxHa1qzv5pwo1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">385</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">500</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"9qn"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://24.media.tumblr.com/tumblr_m27vjmHY8Y1qh66wqo1_250.png"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">600</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">800</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"aad"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://24.media.tumblr.com/tumblr_m1vu8mrE0z1qze0hyo1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">1344</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">1008</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"ae4"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://cdn2.thecatapi.com/images/ae4.gif"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">430</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">242</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"auf"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m0v0feUY3X1qzwfgto1_250.png"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">561</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">554</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"dqn"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m4f8t9JGy11qejbiro1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">560</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">480</span>
-  }
-];
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"one"</span>).innerHTML = elContent;
 </div></code></pre>
+    <p>example <strong>c05/js/inner-html.js</strong></p>
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-comment">// Store the first list item in a variable</span>
+<span class="hljs-keyword">var</span> firstItem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"one"</span>);
+
+<span class="hljs-comment">// Get the content of the first list item</span>
+<span class="hljs-keyword">var</span> itemContent = firstItem.innerHTML;
+
+<span class="hljs-comment">// Update the content of the first list item so it is a link</span>
+firstItem.innerHTML = <span class="hljs-string">'&lt;a href="http://example.org"&gt;'</span> + itemContent + <span class="hljs-string">"&lt;/a&gt;"</span>;
+</div></code></pre>
+    <h2 id="dom-manipulation-adding-elements-using-dom-manipulation">
+      (DOM manipulation) Adding Elements using DOM manipulation
+    </h2>
+    <p>
+      DOM manipulation offers another technique to add new content to a page
+      (rather than innerHTML). It involves three steps:
+    </p>
+    <ol>
+      <li>Creating Element by using <code>createElement()</code> method.</li>
+      <li>Give it content by using <code>createTextNode()</code> method.</li>
+      <li>Add it to the DOM by using <code>appendChild()</code> method.</li>
+    </ol>
+    <p>example <strong>c05/js/add-element.js</strong></p>
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-comment">// Create a new element and store it in a variable.</span>
+<span class="hljs-keyword">var</span> newEl = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"li"</span>);
+
+<span class="hljs-comment">// Create a text node and store it in a variable.</span>
+<span class="hljs-keyword">var</span> newText = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">"quinoa"</span>);
+
+<span class="hljs-comment">// Attach the new text node to the new element.</span>
+newEl.appendChild(newText);
+
+<span class="hljs-comment">// Find the position where the new element should be added.</span>
+<span class="hljs-keyword">var</span> position = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"ul"</span>)[<span class="hljs-number">0</span>];
+
+<span class="hljs-comment">// Insert the new element into its position.</span>
+position.appendChild(newEl);
+</div></code></pre>
+    <h2 id="removing-html-elements-via-dom-manipulation">
+      Removing HTML elements via DOM manipulation:
+    </h2>
+    <p>
+      DOM manipulation can be used to remove elements from the DOM tree. (In
+      general computer science, there is no deleting in specific meaning but
+      more that updating with empty contents or writing with empty contents).
+    </p>
+    <p>Removing will go through three steps:</p>
+    <ol>
+      <li>
+        Store the element that you want to remove in a variable (By the same way
+        of selecting elements).
+      </li>
+      <li>Store the parent of that element in a variable.</li>
+      <li>
+        Remove the element that you have stored in the first step with the
+        following
+        <code>removeChild(STORED_ELEMENT_THAT_YOU_WANT_TO_REMOVE)</code> method.
+      </li>
+    </ol>
+    <p>
+      example found in
+      <strong
+        ><a href="../Examples/c05/remove-element.html"
+          >Examples/c05/remove-element.html</a
+        ></strong
+      >
+    </p>
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-comment">// Store the element to be removed in a variable.</span>
+<span class="hljs-keyword">var</span> removeEl = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"li"</span>)[<span class="hljs-number">3</span>];
+
+<span class="hljs-comment">// Find the element which contains the element to be removed.</span>
+<span class="hljs-keyword">var</span> containerEl = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"ul"</span>)[<span class="hljs-number">0</span>];
+
+<span class="hljs-comment">// Remove the element.</span>
+containerEl.removeChild(removeEl);
+</div></code></pre>
+    <h2 id="comparing-techniques">Comparing techniques:</h2>
+    <h3 id="advantages">Advantages:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>element.innerHTML</th>
+          <th>DOM manipulation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            1. You can use it to add a lot of new markup using less code than
+            DOM manipulation methods.
+          </td>
+          <td>
+            1. It is suited to changing one element from a DOM fragment where
+            there are many siblings.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2. It can be faster than DOM manipulation when adding a lot of new
+            elements to a web page.
+          </td>
+          <td>2. It does not affective handlers.</td>
+        </tr>
+        <tr>
+          <td>
+            3. It is a simple way to remove all of the content from one element
+            (by assigning it a blank string).
+          </td>
+          <td>
+            3. It easily allows a script to add elements incrementally (when you
+            do not want to alter a lot of code at once)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="disadvantages">Disadvantages:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>element.innerHTML</th>
+          <th>DOM manipulation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            1. It should not be used to add content that has come from a user
+            (such as a username or blog comment), as it can pose a significant
+            security risk which is discussed next
+          </td>
+          <td>
+            1. If you have to make a lot of changes to the content of a page, it
+            is slower than <code>innerHTML</code>.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2. It can be difficult to isolate single elements that you want to
+            update within a larger DOM
+          </td>
+          <td>
+            2. You need to write more code to achieve the same thing compared
+            with <code>innerHTML</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Take a look at the same example of &lt;li&gt; elements bellow. Each one
+      adds some more markup and, as a result, the fragment of the DOM tree for
+      each list item is very different.
+    </p>
     <div class="nav-container">
       <h3>Navigate to:</h3>
       <div class="navigation">
-        <a class="prev" href="../026_Loops/Readme.html">
+        <a class="prev" href="../032_get_update_element_content/Readme.html">
           Previous
         </a>
-        <a class="next" href="../../index.html">
-          Return to main menu
+        <a class="next" href="../034_Cross_site_scripting_XSS/Readme.html">
+          Next
         </a>
       </div>
     </div>

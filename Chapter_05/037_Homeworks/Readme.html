@@ -6,9 +6,9 @@
 
     <style>
       /*---------------------------------------------------------------------------------------------
-		 *  Copyright (c) Microsoft Corporation. All rights reserved.
-		 *  Licensed under the MIT License. See License.txt in the project root for license information.
-		 *--------------------------------------------------------------------------------------------*/
+*  Copyright (c) Microsoft Corporation. All rights reserved.
+*  Licensed under the MIT License. See License.txt in the project root for license information.
+*--------------------------------------------------------------------------------------------*/
 
       body {
         font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -379,8 +379,8 @@
 
     <style>
       /*
-		 * Markdown PDF CSS
-		 */
+* Markdown PDF CSS
+*/
 
       body {
         font-family: "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -417,7 +417,7 @@
       }
 
       /* Page Break : use <div class="page"/> to insert page break
-		-------------------------------------------------------- */
+-------------------------------------------------------- */
       .page {
         page-break-after: always;
       }
@@ -450,169 +450,28 @@
     </style>
   </head>
   <body>
-    <h1 id="chapter-4-example">Chapter 4 example</h1>
+    <h1 id="examples">Examples</h1>
+    <p>Check out this example</p>
     <p>
       example found in
       <strong
-        ><a href="../Examples/c04/example.html"
-          >Examples/c04/example.html</a
+        ><a href="../Examples/c05/example.html"
+          >Examples/c05/example.html</a
         ></strong
       >
     </p>
-    <p><strong>JavaScript</strong></p>
-    <pre
-      class="hljs"
-    ><code><div><span class="hljs-keyword">var</span> table = <span class="hljs-number">3</span>; <span class="hljs-comment">// Unit of table</span>
-<span class="hljs-keyword">var</span> operator = <span class="hljs-string">"addition"</span>; <span class="hljs-comment">// Type of calculation by default.</span>
-<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; <span class="hljs-comment">// Set counter to 1 or you can make it empty since it is assigned inside the drawOnHTML function</span>
-<span class="hljs-keyword">var</span> msg = <span class="hljs-string">""</span>; <span class="hljs-comment">// Message</span>
-<span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"blackboard"</span>); <span class="hljs-comment">// Make a cache for the HTML element that has id of "blackboard"</span>
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">iteration, operation, table</span>) </span>{
-  <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">switch</span> (operation) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"/"</span>:
-      result = (iteration / table).toFixed(<span class="hljs-number">2</span>);
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"-"</span>:
-      result = iteration - table;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"*"</span>:
-      result = iteration * table;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-      result = iteration + table;
-      <span class="hljs-keyword">break</span>;
-  }
-  <span class="hljs-keyword">return</span> result;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">op</span>) </span>{
-  <span class="hljs-keyword">switch</span> (op) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"subtraction"</span>:
-      operator = <span class="hljs-string">"-"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"multiplication"</span>:
-      operator = <span class="hljs-string">"*"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"division"</span>:
-      operator = <span class="hljs-string">"/"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-      operator = <span class="hljs-string">"+"</span>;
-  }
-  drawOnHTML();
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawOnHTML</span>(<span class="hljs-params"></span>) </span>{
-  i = <span class="hljs-number">1</span>;
-  msg = <span class="hljs-string">""</span>;
-
-  <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">11</span>) {
-    msg +=
-      i +
-      <span class="hljs-string">" "</span> +
-      operator +
-      <span class="hljs-string">" "</span> +
-      table +
-      <span class="hljs-string">" = "</span> +
-      calculate(i, operator, table) +
-      <span class="hljs-string">"&lt;br /&gt;"</span>;
-    i++;
-  }
-
-  el.innerHTML = msg; <span class="hljs-comment">// By using the object of HTML element that we've cached, we can inject HTML into it.</span>
-}
-
-<span class="hljs-comment">// This is the first call since the function is not executed at first so we have to call it at the first time of page loading.</span>
-render();
-</div></code></pre>
     <h2 id="homework01">HOMEWORK_01</h2>
     <p>
-      Write a simple webpage that show the images of cats [In row] with a nice
-      way using your technique of HTML and CSS. The images URL can be found
-      bellow in the <code>Array of objects</code> as a response from the server.
-      After showing the images, Add the name of the image bellow each image.
-      Example:
+      In the following image bellow, you can find an image of the page. Convert
+      it to real page using HTML,CSS,JavaScript. The HTML file should contain
+      only basic template of the page and all the page is rendered by using
+      JavaScript DOM. DO NOT TRY TO PUT ANY THING IN YOUR HTML BODY TAG.
     </p>
-    <p>
-      Name: <code>tumblr_m3o5vhPKBa1rtuomto1_250.jpg</code> Another example:
-      Name: <code>3v7.gif</code>
-    </p>
-    <p>
-      Use what you've learned from this chapter to implement the fewest code of
-      implementation.
-    </p>
-    <pre class="hljs"><code><div>[
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"2f9"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://26.media.tumblr.com/tumblr_m3o5vhPKBa1rtuomto1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">500</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">333</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"3h0"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m3kg02GkLw1qjc1a7o1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">900</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">600</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"3v7"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://cdn2.thecatapi.com/images/3v7.gif"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">245</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">245</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"58l"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_kop8wzgxHa1qzv5pwo1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">385</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">500</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"9qn"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://24.media.tumblr.com/tumblr_m27vjmHY8Y1qh66wqo1_250.png"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">600</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">800</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"aad"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://24.media.tumblr.com/tumblr_m1vu8mrE0z1qze0hyo1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">1344</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">1008</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"ae4"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://cdn2.thecatapi.com/images/ae4.gif"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">430</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">242</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"auf"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m0v0feUY3X1qzwfgto1_250.png"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">561</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">554</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"dqn"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m4f8t9JGy11qejbiro1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">560</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">480</span>
-  }
-];
-</div></code></pre>
+    <p><img src="./creative_page.png" alt="creative_page" /></p>
     <div class="nav-container">
       <h3>Navigate to:</h3>
       <div class="navigation">
-        <a class="prev" href="../026_Loops/Readme.html">
+        <a class="prev" href="../036_examining_the_dom_in_chrome/Readme.html">
           Previous
         </a>
         <a class="next" href="../../index.html">

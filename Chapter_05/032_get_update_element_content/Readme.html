@@ -6,9 +6,9 @@
 
     <style>
       /*---------------------------------------------------------------------------------------------
-		 *  Copyright (c) Microsoft Corporation. All rights reserved.
-		 *  Licensed under the MIT License. See License.txt in the project root for license information.
-		 *--------------------------------------------------------------------------------------------*/
+*  Copyright (c) Microsoft Corporation. All rights reserved.
+*  Licensed under the MIT License. See License.txt in the project root for license information.
+*--------------------------------------------------------------------------------------------*/
 
       body {
         font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -379,8 +379,8 @@
 
     <style>
       /*
-		 * Markdown PDF CSS
-		 */
+* Markdown PDF CSS
+*/
 
       body {
         font-family: "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light",
@@ -417,7 +417,7 @@
       }
 
       /* Page Break : use <div class="page"/> to insert page break
-		-------------------------------------------------------- */
+-------------------------------------------------------- */
       .page {
         page-break-after: always;
       }
@@ -450,173 +450,193 @@
     </style>
   </head>
   <body>
-    <h1 id="chapter-4-example">Chapter 4 example</h1>
+    <h1 id="how-to-getupdate-element-content">
+      How to GET/UPDATE element content
+    </h1>
+    <p>
+      So far this chapter has focused on finding elements in the DOM tree. The
+      rest of this chapter shows how to access/update element content. Your
+      choice of techniques depends upon what the element contains.
+    </p>
+    <p>
+      Take a look at the same example of &lt;li&gt; elements bellow. Each one
+      adds some more markup and, as a result, the fragment of the DOM tree for
+      each list item is very different.
+    </p>
+    <p><strong>HTML</strong></p>
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"one"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hot"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>fresh<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> figs<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"two"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hot"</span>&gt;</span>pine nuts<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"three"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hot"</span>&gt;</span>honey<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"four"</span>&gt;</span>balsamic vinegar<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</div></code></pre>
+    <p>From the example we can:</p>
+    <ol>
+      <li>
+        <strong>Navigate to the text node</strong>. This works best when the
+        element contains only text, no other elements.
+      </li>
+      <li>
+        <strong>Work with the containing element</strong>. This allows you to
+        access its text nodes and child elements. It works better when an
+        element has text nodes and child elements that are siblings.
+      </li>
+    </ol>
+    <h3 id="1-text-nodes-navigate-to-the-text-node">
+      1. TEXT NODES (Navigate to the text node):
+    </h3>
+    <p>
+      Once you have navigated from an element to its text node, there is one
+      property that you will commonly
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>nodeValue</code></td>
+          <td>Access text from node</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><img src="./text_node.png" alt="text_node" /></p>
+    <h3 id="2-containing-element-work-with-the-containing-element">
+      2. CONTAINING ELEMENT (Work with the containing element):
+    </h3>
+    <p>
+      When you are working wi th an element node (rather than its text node),
+      that element can contain markup. You have to choose whether you want to
+      retrieve (get) or update (set) the markup as well as t he text.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>innerHTML</code></td>
+          <td>Get/Set text and markup</td>
+        </tr>
+        <tr>
+          <td><code>textContent</code></td>
+          <td>Get/Set text only</td>
+        </tr>
+        <tr>
+          <td><code>innerText</code></td>
+          <td>Get/Set text only</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><img src="./containing_element.png" alt="containing_element" /></p>
+    <p>Ok let go through those properties in depth:</p>
+    <h2 id="text-nodes-accessing-and-updating-a-text-node">
+      (TEXT NODES) Accessing and Updating a text node
+    </h2>
+    <p>
+      When you select a text node, you can retrieve or modify the content of it
+      using the node Value property.
+    </p>
+    <p><img src="./nodeValue.png" alt="nodeValue" /></p>
+    <ol>
+      <li>
+        The &lt;li&gt; element node is selected using the getElementById()
+        method.
+      </li>
+      <li>The first child of &lt;li&gt; is the &lt;em&gt; element.</li>
+      <li>The text node is the next sibling of that &lt;em&gt; element.</li>
+      <li>
+        You have the text node and can access its contents using
+        <code>nodeValue</code>.
+      </li>
+    </ol>
     <p>
       example found in
       <strong
-        ><a href="../Examples/c04/example.html"
-          >Examples/c04/example.html</a
+        ><a href="../Examples/c05/node-value.html"
+          >Examples/c05/node-value.html</a
         ></strong
       >
     </p>
-    <p><strong>JavaScript</strong></p>
     <pre
       class="hljs"
-    ><code><div><span class="hljs-keyword">var</span> table = <span class="hljs-number">3</span>; <span class="hljs-comment">// Unit of table</span>
-<span class="hljs-keyword">var</span> operator = <span class="hljs-string">"addition"</span>; <span class="hljs-comment">// Type of calculation by default.</span>
-<span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span>; <span class="hljs-comment">// Set counter to 1 or you can make it empty since it is assigned inside the drawOnHTML function</span>
-<span class="hljs-keyword">var</span> msg = <span class="hljs-string">""</span>; <span class="hljs-comment">// Message</span>
-<span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"blackboard"</span>); <span class="hljs-comment">// Make a cache for the HTML element that has id of "blackboard"</span>
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate</span>(<span class="hljs-params">iteration, operation, table</span>) </span>{
-  <span class="hljs-keyword">let</span> result = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">switch</span> (operation) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"/"</span>:
-      result = (iteration / table).toFixed(<span class="hljs-number">2</span>);
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"-"</span>:
-      result = iteration - table;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"*"</span>:
-      result = iteration * table;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-      result = iteration + table;
-      <span class="hljs-keyword">break</span>;
-  }
-  <span class="hljs-keyword">return</span> result;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params">op</span>) </span>{
-  <span class="hljs-keyword">switch</span> (op) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"subtraction"</span>:
-      operator = <span class="hljs-string">"-"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"multiplication"</span>:
-      operator = <span class="hljs-string">"*"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">case</span> <span class="hljs-string">"division"</span>:
-      operator = <span class="hljs-string">"/"</span>;
-      <span class="hljs-keyword">break</span>;
-    <span class="hljs-keyword">default</span>:
-      operator = <span class="hljs-string">"+"</span>;
-  }
-  drawOnHTML();
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawOnHTML</span>(<span class="hljs-params"></span>) </span>{
-  i = <span class="hljs-number">1</span>;
-  msg = <span class="hljs-string">""</span>;
-
-  <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">11</span>) {
-    msg +=
-      i +
-      <span class="hljs-string">" "</span> +
-      operator +
-      <span class="hljs-string">" "</span> +
-      table +
-      <span class="hljs-string">" = "</span> +
-      calculate(i, operator, table) +
-      <span class="hljs-string">"&lt;br /&gt;"</span>;
-    i++;
-  }
-
-  el.innerHTML = msg; <span class="hljs-comment">// By using the object of HTML element that we've cached, we can inject HTML into it.</span>
-}
-
-<span class="hljs-comment">// This is the first call since the function is not executed at first so we have to call it at the first time of page loading.</span>
-render();
+    ><code><div><span class="hljs-keyword">var</span> itemTwo = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"two"</span>); <span class="hljs-comment">// Get second list item</span>
+<span class="hljs-keyword">var</span> elText = itemTwo.firstChild.nodeValue; <span class="hljs-comment">// Get its text content</span>
+elText = elText.replace(<span class="hljs-string">"pine nuts"</span>, <span class="hljs-string">"kale"</span>); <span class="hljs-comment">// Change pine nuts to kale</span>
+itemTwo.firstChild.nodeValue = elText; <span class="hljs-comment">// Update the list item</span>
 </div></code></pre>
-    <h2 id="homework01">HOMEWORK_01</h2>
+    <h2 id="containing-element-access-update-text-with-textcontent-innertext">
+      (CONTAINING ELEMENT) ACCESS &amp; UPDATE TEXT WITH (TEXTCONTENT &amp;
+      INNERTEXT)
+    </h2>
+    <h4 id="textcontent">textContent:</h4>
     <p>
-      Write a simple webpage that show the images of cats [In row] with a nice
-      way using your technique of HTML and CSS. The images URL can be found
-      bellow in the <code>Array of objects</code> as a response from the server.
-      After showing the images, Add the name of the image bellow each image.
-      Example:
+      The <code>textContent</code> property allows you to collect or update just
+      the text that is in the containing element (and its children AGAIN with
+      its children).
     </p>
+    <p><img src="./textContent.png" alt="textContent" /></p>
     <p>
-      Name: <code>tumblr_m3o5vhPKBa1rtuomto1_250.jpg</code> Another example:
-      Name: <code>3v7.gif</code>
+      To collect the text fromt he &lt;li&gt; elements in our example (and
+      ignore any markup inside the element) you can use the
+      <code>textContent</code> property on the containing &lt;li&gt; element. In
+      this case it would return the value of
+      <strong><code>&quot;fresh figs&quot;</code></strong
+      >.
     </p>
+    <h4 id="innertext">innerText:</h4>
     <p>
-      Use what you've learned from this chapter to implement the fewest code of
-      implementation.
+      You may also come across a property called <code>innerText</code>, but you
+      should generally avoid it for three key reasons:
     </p>
-    <pre class="hljs"><code><div>[
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"2f9"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://26.media.tumblr.com/tumblr_m3o5vhPKBa1rtuomto1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">500</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">333</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"3h0"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m3kg02GkLw1qjc1a7o1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">900</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">600</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"3v7"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://cdn2.thecatapi.com/images/3v7.gif"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">245</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">245</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"58l"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_kop8wzgxHa1qzv5pwo1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">385</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">500</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"9qn"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://24.media.tumblr.com/tumblr_m27vjmHY8Y1qh66wqo1_250.png"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">600</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">800</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"aad"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://24.media.tumblr.com/tumblr_m1vu8mrE0z1qze0hyo1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">1344</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">1008</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"ae4"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://cdn2.thecatapi.com/images/ae4.gif"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">430</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">242</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"auf"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m0v0feUY3X1qzwfgto1_250.png"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">561</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">554</span>
-  },
-  {
-    <span class="hljs-attr">breeds</span>: [],
-    <span class="hljs-attr">id</span>: <span class="hljs-string">"dqn"</span>,
-    <span class="hljs-attr">url</span>: <span class="hljs-string">"https://25.media.tumblr.com/tumblr_m4f8t9JGy11qejbiro1_250.jpg"</span>,
-    <span class="hljs-attr">width</span>: <span class="hljs-number">560</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">480</span>
-  }
-];
+    <ol>
+      <li>Browser Support.</li>
+      <li>
+        Effected by CSS: When the element taking
+        <code>visibility: hidden;</code> style, then it will not showing any
+        text.
+      </li>
+      <li>Performance.</li>
+    </ol>
+    <p>
+      example found in
+      <strong
+        ><a href="../Examples/c05/inner-text-and-text-content.html"
+          >Examples/c05/inner-text-and-text-content.html</a
+        ></strong
+      >
+    </p>
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-keyword">var</span> firstItem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"one"</span>); <span class="hljs-comment">// Find first list item</span>
+<span class="hljs-keyword">var</span> showTextContent = firstItem.textContent; <span class="hljs-comment">// Get value of textContent</span>
+<span class="hljs-keyword">var</span> showInnerText = firstItem.innerText; <span class="hljs-comment">// Get value of innerText</span>
+
+<span class="hljs-comment">// Show the content of these two properties at the end of the list</span>
+<span class="hljs-keyword">var</span> msg = <span class="hljs-string">"&lt;p&gt;textContent: "</span> + showTextContent + <span class="hljs-string">"&lt;/p&gt;"</span>;
+msg += <span class="hljs-string">"&lt;p&gt;innerText: "</span> + showInnerText + <span class="hljs-string">"&lt;/p&gt;"</span>;
+<span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"scriptResults"</span>);
+el.innerHTML = msg;
+
+firstItem.textContent = <span class="hljs-string">"sourdough bread"</span>; <span class="hljs-comment">// Update the first list item</span>
 </div></code></pre>
     <div class="nav-container">
       <h3>Navigate to:</h3>
       <div class="navigation">
-        <a class="prev" href="../026_Loops/Readme.html">
+        <a class="prev" href="../031_Traversubg_the_dom/Readme.html">
           Previous
         </a>
-        <a class="next" href="../../index.html">
-          Return to main menu
+        <a class="next" href="../033_Adding_removing_html_content/Readme.html">
+          Next
         </a>
       </div>
     </div>
