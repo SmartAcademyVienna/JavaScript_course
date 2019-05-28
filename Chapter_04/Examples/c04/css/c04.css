@@ -65,6 +65,13 @@ h1 {
 
 .operators {
   display: flex;
+<<<<<<< HEAD
+=======
+  justify-content: space-evenly;
+  align-items: center;
+  width: 600px;
+  margin: 1rem auto;
+>>>>>>> 3fc6dcca02d0e4153fc805390045e91f268c97fe
 }
 
 .operators .sub button,
