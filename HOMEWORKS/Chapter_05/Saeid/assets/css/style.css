@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 1024px;
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+.page_wrapper {
+  background-color: rgb(92, 92, 92);
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+/* Start header*/
+#header {
+  width: 100%;
+  height: 45rem;
+  background: /* transparent blue overlay */ linear-gradient(
+      rgba(0, 0, 0, 0.863),
+      rgba(0, 0, 0, 0.74),
+      rgba(0, 0, 0, 0.322)
+    ),
+    /* inset your image below */
+      url(/HOMEWORKS/Chapter_05/assets/img/header_img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+header .container {
+  text-align: center;
+  margin: 15rem 23rem auto;
+  color: white;
+}
+header h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+header hr {
+  border: 2px solid rgba(243, 49, 49, 0.938);
+  width: 40px;
+}
+header p {
+  font-size: 17px;
+}
+header button {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(243, 49, 49, 0.938);
+  color: white;
+  border: none;
+  border-radius: 50px;
+}
+/* End of header*/
+
+/* Start Get started section*/
+#start_section {
+  width: 100%;
+  height: 20rem;
+  background-color: rgba(243, 49, 49, 0.938);
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#start_section .container {
+  text-align: center;
+  margin: 5rem 33rem auto;
+  color: white;
+}
+
+#start_section h1 {
+  font-size: 20px;
+}
+#start_section hr {
+  border: 2px solid rgba(255, 255, 255, 0.938);
+  width: 40px;
+}
+#start_section p {
+  font-size: 14px;
+}
+#start_section button {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.938);
+  color: rgba(243, 49, 49, 0.938);
+  border: none;
+  border-radius: 50px;
+}
+/* End get started*/
+
+/* Start service section*/
+#service {
+  width: 100%;
+  height: 25rem;
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  color: rgba(243, 49, 49, 0.938);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#service .container {
+  text-align: center;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 5rem;
+}
+
+#service h1 {
+  font-size: 20px;
+  color: black;
+  margin-top: 4rem;
+}
+#service hr {
+  border: 2px solid rgba(243, 49, 49, 0.938);
+  width: 40px;
+}
+#service p {
+  font-size: 14px;
+  color: black;
+}
+#service .card {
+  background-color: white;
+  color: black;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  margin: 1rem;
+}
+.fa-gem:before {
+  content: "\f3a5";
+  font-size: 3rem;
+  color: rgba(243, 49, 49, 0.938);
+  position: relative;
+  top: 30px;
+}
+.fa-paper-plane:before {
+  content: "\f1d8";
+  font-size: 3rem;
+  color: rgba(243, 49, 49, 0.938);
+  position: relative;
+  top: 30px;
+}
+.fa-newspaper:before {
+  content: "\f1ea";
+  font-size: 3rem;
+  color: rgba(243, 49, 49, 0.938);
+  position: relative;
+  top: 30px;
+}
+.fa-heart:before {
+  content: "\f004";
+  font-size: 3rem;
+  color: rgba(243, 49, 49, 0.938);
+  position: relative;
+  top: 30px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  top: 12%;
+}
+.card p {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+  top: 12%;
+}
+/* End service section*/
+
+/* Start Image section*/
+#photo_section {
+  width: 100%;
+  height: 40rem;
+  background-color: rgba(243, 49, 49, 0.938);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+#photo_section .card {
+  width: 33.3%;
+  height: 50%;
+  background-color: white;
+}
+
+#photo_section .card img {
+  width: 100%;
+  height: 100%;
+}
+/* End Image*/
+
+/* Start download section*/
+#download_section {
+  width: 100%;
+  height: 10rem;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(26, 25, 25, 0.938);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#download_section p {
+  font-size: 22px;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  position: relative;
+  top: 10%;
+}
+#download_section button {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.938);
+  color: black;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  top: 1rem;
+}
+/* End download*/
+
+/* Start footer*/
+#footer_section {
+  width: 100%;
+  height: 25rem;
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#footer_section .container {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#footer_section h1 {
+  font-size: 30px;
+  color: black;
+  margin-top: 4rem;
+}
+#footer_section hr {
+  border: 2px solid rgba(243, 49, 49, 0.938);
+  width: 40px;
+}
+#footer_section p {
+  font-size: 16px;
+  color: black;
+}
+#footer_section .card {
+  background-color: white;
+  color: black;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  margin: 1rem;
+}
+.fa-phone:before {
+  content: "\f095";
+  font-size: 2rem;
+  color: rgba(10, 10, 10, 0.938);
+  position: relative;
+  top: 30px;
+}
+.fa-envelope:before {
+  content: "\f0e0";
+  font-size: 2rem;
+  color: rgba(10, 10, 10, 0.938);
+  position: relative;
+  top: 30px;
+}
+/* End footer*/
