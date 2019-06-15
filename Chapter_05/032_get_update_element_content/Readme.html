@@ -485,8 +485,8 @@
         element has text nodes and child elements that are siblings.
       </li>
     </ol>
-    <h3 id="1-text-nodes-navigate-to-the-text-node">
-      1. TEXT NODES (Navigate to the text node):
+    <h3 id="1-text-nodes-navigate-to-the-text-nodeleave-it-if-you-can">
+      1. TEXT NODES (Navigate to the text node)(Leave it if you can!):
     </h3>
     <p>
       Once you have navigated from an element to its text node, there is one
@@ -511,7 +511,7 @@
       2. CONTAINING ELEMENT (Work with the containing element):
     </h3>
     <p>
-      When you are working wi th an element node (rather than its text node),
+      When you are working with an element node (rather than its text node),
       that element can contain markup. You have to choose whether you want to
       retrieve (get) or update (set) the markup as well as t he text.
     </p>
@@ -533,11 +533,16 @@
         </tr>
         <tr>
           <td><code>innerText</code></td>
-          <td>Get/Set text only</td>
+          <td>Get/Set text only (Microsoft invention)</td>
         </tr>
       </tbody>
     </table>
+    <p>
+      <code>textContent</code> is the same <code>innerText</code> but the last
+      one is effected by browser rendering.
+    </p>
     <p><img src="./containing_element.png" alt="containing_element" /></p>
+    <hr />
     <p>Ok let go through those properties in depth:</p>
     <h2 id="text-nodes-accessing-and-updating-a-text-node">
       (TEXT NODES) Accessing and Updating a text node
@@ -570,7 +575,9 @@
     <pre
       class="hljs"
     ><code><div><span class="hljs-keyword">var</span> itemTwo = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"two"</span>); <span class="hljs-comment">// Get second list item</span>
-<span class="hljs-keyword">var</span> elText = itemTwo.firstChild.nodeValue; <span class="hljs-comment">// Get its text content</span>
+<span class="hljs-keyword">var</span> elText = itemTwo.firstChild.nodeValue; <span class="hljs-comment">// Get its text content and not working in Chrome.</span>
+<span class="hljs-comment">// Chrome version</span>
+<span class="hljs-comment">// var elText = itemTwo.childNodes[0].nodeValue // result "pine nuts"</span>
 elText = elText.replace(<span class="hljs-string">"pine nuts"</span>, <span class="hljs-string">"kale"</span>); <span class="hljs-comment">// Change pine nuts to kale</span>
 itemTwo.firstChild.nodeValue = elText; <span class="hljs-comment">// Update the list item</span>
 </div></code></pre>

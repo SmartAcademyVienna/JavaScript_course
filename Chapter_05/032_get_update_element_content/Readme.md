@@ -21,7 +21,7 @@ From the example we can:
 1. **Navigate to the text node**. This works best when the element contains only text, no other elements.
 2. **Work with the containing element**. This allows you to access its text nodes and child elements. It works better when an element has text nodes and child elements that are siblings.
 
-### 1. TEXT NODES (Navigate to the text node):
+### 1. TEXT NODES (Navigate to the text node)(Leave it if you can!):
 
 Once you have navigated from an element to its text node, there is one property that you will commonly
 
@@ -33,15 +33,19 @@ Once you have navigated from an element to its text node, there is one property 
 
 ### 2. CONTAINING ELEMENT (Work with the containing element):
 
-When you are working wi th an element node (rather than its text node), that element can contain markup. You have to choose whether you want to retrieve (get) or update (set) the markup as well as t he text.
+When you are working with an element node (rather than its text node), that element can contain markup. You have to choose whether you want to retrieve (get) or update (set) the markup as well as t he text.
 
-| Property      | Description             |
-| ------------- | ----------------------- |
-| `innerHTML`   | Get/Set text and markup |
-| `textContent` | Get/Set text only       |
-| `innerText`   | Get/Set text only       |
+| Property      | Description                             |
+| ------------- | --------------------------------------- |
+| `innerHTML`   | Get/Set text and markup                 |
+| `textContent` | Get/Set text only                       |
+| `innerText`   | Get/Set text only (Microsoft invention) |
+
+`textContent` is the same `innerText` but the last one is effected by browser rendering.
 
 ![containing_element](./containing_element.png)
+
+---
 
 Ok let go through those properties in depth:
 
@@ -60,7 +64,9 @@ example found in **[Examples/c05/node-value.html](../Examples/c05/node-value.htm
 
 ```js
 var itemTwo = document.getElementById("two"); // Get second list item
-var elText = itemTwo.firstChild.nodeValue; // Get its text content
+var elText = itemTwo.firstChild.nodeValue; // Get its text content and not working in Chrome.
+// Chrome version
+// var elText = itemTwo.childNodes[0].nodeValue // result "pine nuts"
 elText = elText.replace("pine nuts", "kale"); // Change pine nuts to kale
 itemTwo.firstChild.nodeValue = elText; // Update the list item
 ```
