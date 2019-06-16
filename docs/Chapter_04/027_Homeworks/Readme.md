@@ -1,6 +1,6 @@
 # Chapter 4 example
 
-example found in **[Examples/c04/example.html](../Examples/c04/example.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/example.html">**Chapter_04/Examples/c04/example.html**</a>
 
 **JavaScript**
 

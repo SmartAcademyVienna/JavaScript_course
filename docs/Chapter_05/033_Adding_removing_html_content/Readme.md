@@ -47,7 +47,7 @@ Adding content of the `elContent` variable (including any markup) to the first l
 document.getElementById("one").innerHTML = elContent;
 ```
 
-example **c05/js/inner-html.js**
+example found in <a target="_blank" href="Chapter_05/Examples/c05/inner-html.html">**Chapter_05/Examples/c05/inner-html.html**</a>
 
 ```js
 // Store the first list item in a variable
@@ -97,7 +97,7 @@ Removing will go through three steps:
 2. Store the parent of that element in a variable.
 3. Remove the element that you have stored in the first step with the following `removeChild(STORED_ELEMENT_THAT_YOU_WANT_TO_REMOVE)` method.
 
-example found in **[Examples/c05/remove-element.html](../Examples/c05/remove-element.html)**
+example found in <a target="_blank" href="Chapter_05/Examples/c05/remove-element.html">**Chapter_05/Examples/c05/remove-element.html**</a>
 
 ```js
 // Store the element to be removed in a variable.

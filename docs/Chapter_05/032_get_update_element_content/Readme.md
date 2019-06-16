@@ -60,7 +60,7 @@ When you select a text node, you can retrieve or modify the content of it using 
 3. The text node is the next sibling of that \<em> element.
 4. You have the text node and can access its contents using `nodeValue`.
 
-example found in **[Examples/c05/node-value.html](../Examples/c05/node-value.html)**
+example found in <a target="_blank" href="Chapter_05/Examples/c05/node-value.html">**Chapter_05/Examples/c05/node-value.html**</a>
 
 ```js
 var itemTwo = document.getElementById("two"); // Get second list item
@@ -89,7 +89,7 @@ You may also come across a property called `innerText`, but you should generally
 2. Effected by CSS: When the element taking `visibility: hidden;` style, then it will not showing any text.
 3. Performance.
 
-example found in **[Examples/c05/inner-text-and-text-content.html](../Examples/c05/inner-text-and-text-content.html)**
+example found in <a target="_blank" href="Chapter_05/Examples/c05/inner-text-and-text-content.html">**Chapter_05/Examples/c05/inner-text-and-text-content.html**</a>
 
 ```js
 var firstItem = document.getElementById("one"); // Find first list item

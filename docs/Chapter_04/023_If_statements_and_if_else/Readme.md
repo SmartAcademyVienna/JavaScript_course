@@ -5,7 +5,7 @@ on. If the condition evaluates to `true`, any statements in the subsequent code 
 
 ![is statment](./if_statment.png)
 
-example found in **[Examples/c04/if-statement.html](../Examples/c04/if-statement.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/if-statement.html">**Chapter_04/Examples/c04/if-statement.html**</a>
 
 **HTML**
 
@@ -45,7 +45,7 @@ var el = document.getElementById("answer");
 el.textContent = msg;
 ```
 
-Another example found in **[Examples/c04/if-statement-with-function.html](../Examples/c04/if-statement-with-function.html)**
+Another example found in <a target="_blank" href="Chapter_04/Examples/c04/if-statement-with-function.html">**Chapter_04/Examples/c04/if-statement-with-function.html**</a>
 
 **HTML**
 
@@ -97,7 +97,7 @@ If the condition resolves to `false` the second code block is run instead.
 
 ![if else](./if_else.png)
 
-example found in **[Examples/c04/if-else-statement.html](../Examples/c04/if-else-statement.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/if-else-statement.html">**Chapter_04/Examples/c04/if-else-statement.html**</a>
 
 **HTML**
 

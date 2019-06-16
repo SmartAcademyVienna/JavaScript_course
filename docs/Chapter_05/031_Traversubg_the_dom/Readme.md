@@ -192,7 +192,7 @@ p {
 }
 ```
 
-Let us see example found in **[Examples/c05/node-list.html](../Examples/c05/node-list.html)**
+Let us see example found in example found in <a target="_blank" href="Chapter_05/Examples/c05/node-list.html">**Chapter_05/Examples/c05/node-list.html**</a>
 
 ## Apply previous & next sibling script
 

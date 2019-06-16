@@ -4,7 +4,7 @@ When you have a NodeList, you can loop through each node in the collection and a
 
 ![repeating_action_for_nodelist](./repeating_action_for_nodelist.png)
 
-Example found in example found in **[Examples/c05/node-list.html](../Examples/c05/node-list.html)**
+Example found in example found in example found in <a target="_blank" href="Chapter_05/Examples/c05/node-list.html">**Chapter_05/Examples/c05/node-list.html**</a>
 
 **HTML**
 

@@ -2,7 +2,7 @@
 
 Check out this example
 
-example found in **[Examples/c05/example.html](../Examples/c05/example.html)**
+example found in <a target="_blank" href="Chapter_05/Examples/c05/example.html">**Chapter_05/Examples/c05/example.html**</a>
 
 ## HOMEWORK_01
 

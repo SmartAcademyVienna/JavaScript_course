@@ -41,7 +41,7 @@ In any condition, there is usually one operator and two operands. The operands a
 
 ![structuring comparison operators](./structuring_comparison.png)
 
-example found in **[Examples/c04/comparison-operator.html](../Examples/c04/comparison-operator.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/comparison-operator.html">**Chapter_04/Examples/c04/comparison-operator.html**</a>
 
 **HTML**
 
@@ -86,7 +86,7 @@ The operand dose not have to be a single value or variable name. An operand can 
 
 ![compining](./compining.png)
 
-example found in **[Examples/c04/comparison-operator-continued.html](../Examples/c04/comparison-operator-continued.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/comparison-operator-continued.html">**Chapter_04/Examples/c04/comparison-operator-continued.html**</a>
 
 **HTML**
 
@@ -160,7 +160,7 @@ el.innerHTML = "New high score: " + comparison;
 | !                 | false     | `true`  |
 | !                 | true      | `false` |
 
-example found in **[Examples/c04/logical-and..html](../Examples/c04/logical-and..html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/logical-and.html">**Chapter_04/Examples/c04/logical-and.html**</a>
 
 **HTML**
 
@@ -203,7 +203,7 @@ var el = document.getElementById("answer");
 el.innerHTML = msg;
 ```
 
-Another example found in **[Examples/c04/logical-or-logical-not.html](../Examples/c04/logical-or-logical-not.html)**
+Another example found in <a target="_blank" href="Chapter_04/Examples/c04/logical-or-logical-not.html">**Chapter_04/Examples/c04/logical-or-logical-not.html**</a>
 
 **HTML**
 

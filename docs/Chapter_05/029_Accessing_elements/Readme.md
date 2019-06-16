@@ -46,7 +46,7 @@ Uses CSS selector syntax to select one or more element s and returns all of thos
 
 ## SELECTING ELEMENTS USING ID ATTRIBUTES
 
-Let us see the following example found in **[Examples/c05/get-elements-by-id.html](../Examples/c05/get-elements-by-id.html)**
+Let us see the following example found in <a target="_blank" href="Chapter_05/Examples/c05/get-elements-by-id.html">**Chapter_05/Examples/c05/get-elements-by-id.html**</a>
 
 ```HTML
 <h1 id="header">List King</h1>
@@ -302,7 +302,7 @@ p {
 
 #### Selecting elements using Class Attributes:
 
-JavaScript found for this example found in **[Examples/c05/get-element-by-class-name.html](../Examples/c05/get-element-by-class-name.html)**
+JavaScript found for this example found in <a target="_blank" href="Chapter_05/Examples/c05/get-element-by-class-name.html">**Chapter_05/Examples/c05/get-element-by-class-name.html**</a>
 
 **JavaScript**
 
@@ -319,7 +319,7 @@ if (elements.length > 2) {
 
 #### Selecting elements By Tag Name:
 
-JavaScript found for this example found in **[Examples/c05/get-elements-by-tag-name.html](../Examples/c05/get-elements-by-tag-name.html)**
+JavaScript found for this example found in <a target="_blank" href="Chapter_05/Examples/c05/get-elements-by-tag-name.html">**Chapter_05/Examples/c05/get-elements-by-tag-name.html**</a>
 
 **JavaScript**
 
@@ -336,7 +336,7 @@ if (elements.length > 0) {
 
 #### Selecting elements using CSS Selectors:
 
-JavaScript found for this example found in **[Examples/c05/query-selector.html](../Examples/c05/query-selector.html)**
+JavaScript found for this example found in <a target="_blank" href="Chapter_05/Examples/c05/query-selector.html">**Chapter_05/Examples/c05/query-selector.html**</a>
 
 **JavaScript**
 

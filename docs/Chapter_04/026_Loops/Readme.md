@@ -21,7 +21,7 @@ Loops check a condition. If it returns `true`, a code block will run. Then the c
 1. In some cases you can find `break` or `continue`. They are used to control the follow of the loop.
 2. If you don't control your loop condition correctly the loop get into `infinite loop`.
 
-example found in **[Examples/c04/for-loop.html](../Examples/c04/for-loop.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/for-loop.html">**Chapter_04/Examples/c04/for-loop.html**</a>
 
 **HTML**
 
@@ -69,7 +69,7 @@ for (var i = 0; i < arrayLength; i++) {
 document.getElementById("answer").innerHTML = msg;
 ```
 
-example found in **[Examples/c04/while-loop.html](../Examples/c04/while-loop.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/while-loop.html">**Chapter_04/Examples/c04/while-loop.html**</a>
 
 **HTML**
 
@@ -108,7 +108,7 @@ while (i < 10) {
 document.getElementById("answer").innerHTML = msg;
 ```
 
-example found in **[Examples/c04/do-while-loop.html](../Examples/c04/do-while-loop.html)**
+example found in <a target="_blank" href="Chapter_04/Examples/c04/do-while-loop.html">**Chapter_04/Examples/c04/do-while-loop.html**</a>
 
 **HTML**
 
