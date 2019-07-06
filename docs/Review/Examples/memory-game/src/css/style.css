@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background: #333;
+}
+
+.memory-game {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control-container #restart {
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 3px;
+  background: burlywood;
+  margin-right: 32px;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  transition-property: padding, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+.control-container #restart:hover {
+  padding: 15px 20px;
+  box-shadow: 0 0 30px 5px darkred;
+}
+
+.control-container #moves {
+  color: white;
+}
+
+.game-container {
+  display: flex;
+}
+#game-container > .card {
+  margin: 3px;
+  width: 15%;
+  height: 150px;
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s linear;
+}
+#game-container > .card.flip {
+  display: inline-block;
+  transform: rotateY(180deg);
+}
+#game-container > .card .front-face img {
+  transform: scaleX(-1);
+}
+#game-container > .card .front-face,
+#game-container > .card .back-face {
+  position: absolute;
+  border: 4px solid darkgray;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#game-container > .card .back-face {
+  backface-visibility: hidden;
+}
+
+#game-container > .card img {
+  width: 100%;
+  height: 100%;
+  background: white;
+}

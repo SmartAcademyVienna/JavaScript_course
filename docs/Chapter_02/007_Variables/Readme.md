@@ -22,16 +22,17 @@ You can declare and assign value at the same time
 6. If your variable name is made up of more than one word, use either `camel-case` or `snake-case`
 
 Can you specify the valid variable names:
+
 | Variable name | Is Valid |
-| -------------------- | --------- |
-| firstName | Yes |
-| Var# | No |
-| first_name | Yes |
-| num1 | Yes |
-|first name | No |
-| first-name | No |
-| 1number | No |
-| \$result | Yes |
+| ------------- | -------- |
+| firstName     | Yes      |
+| Var#          | No       |
+| first_name    | Yes      |
+| num1          | Yes      |
+| first name    | No       |
+| first-name    | No       |
+| 1number       | No       |
+| \$result      | Yes      |
 
 ## Variable data types
 
