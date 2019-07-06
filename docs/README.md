@@ -98,3 +98,9 @@ This is a practical learning curve of JavaScript.
 #### **Chapter_12 => Filtering, Searching, Sorting**
 
 #### **Chapter_13 => Form Enhancement and Validation**
+
+---
+
+### **JS-REVIEW**
+
+- [JS1&2](Review/Readme.md)
