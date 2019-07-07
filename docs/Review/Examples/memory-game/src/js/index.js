@@ -54,6 +54,7 @@ let memoryImages = [
 function newGame() {
   setMovePoints(true);
   pairs = [];
+  gameHtml = '';
   shuffledImages = shuffle(memoryImages);
   for (let i = 0; i < shuffledImages.length; i++) {
     gameHtml += `<div class="card" onclick="window.flipCard(${i})">
@@ -125,7 +126,7 @@ function setMovePoints(isNewGame) {
 newGame();
 
 /**
- * Those two lines are used to solve webpack contexts issue which is not referring to window by default.
+ * Thise two lines are used to solve webpack contexts issue which is not referring to window by default.
  */
 window.flipCard = flipCard;
 window.newGame = newGame;
