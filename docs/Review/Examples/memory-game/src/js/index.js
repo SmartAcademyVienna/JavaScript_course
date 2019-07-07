@@ -125,7 +125,7 @@ function setMovePoints(isNewGame) {
 newGame();
 
 /**
- * Thise two lines are used to solve webpack contexts issue which is not referring to window by default.
+ * Those two lines are used to solve webpack contexts issue which is not referring to window by default.
  */
 window.flipCard = flipCard;
 window.newGame = newGame;
